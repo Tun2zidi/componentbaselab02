@@ -12,8 +12,9 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
   </header>
+    <RouterView />
+
 </div>
-  <RouterView />
 </template>
 
 <style scoped>
@@ -22,8 +23,11 @@ import { RouterLink, RouterView } from 'vue-router'
   font-family: Avenir,Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing : grayscale;
-  text-align: center
-  color: #2c3e50;
+  text-align: center;
+  color :#2c3e50;
+}
+nav {
+  padding: 20px;
 }
 
 nav a {

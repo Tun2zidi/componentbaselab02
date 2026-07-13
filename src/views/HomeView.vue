@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TheWelcome from '../components/EventCard.vue'
+</script>
+
 <template>
-<div class="home"></div>
+  <main>
+    <TheWelcome />
+  </main>
 </template>

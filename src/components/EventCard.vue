@@ -1,39 +1,25 @@
 <script setup lang="ts">
-import {ref} from 'vue'
 import type { Event } from '@/types'
+import EventMeta from '@/components/EventMeta.vue'
+
 defineProps<{
   event: Event
 }>()
-// const event =ref({
-//   id:5928101,
-//   category :'animal welfare',
-//   title : 'Cat  Adoption Day',
-//   description : 'Find your new feline friend at this event',
-//   location : 'Meow Town',
-//   date : 'January 28,2026',
-//   time : '12:00',
-//   petsAllowed :true,
-//   organizer :'Kat Laydee'
-// })
 </script>
 
 <template>
-  <div class = "event-class"></div>
-    <div class ="event-class">
-      <div class ="event-class">
-        <h2>{{ event.title }}</h2>
-        <span>@{{ event.time }} on {{ event.date }}</span>
-    </div>
+  <div class="event-class">
+    <h2>{{ event.title }}</h2>
+    <span>@{{ event.time }} on {{ event.date }}</span>
+    <EventMeta :event="event" />
   </div>
 </template>
 
 <style scoped>
-.event-class{
-  display : flex;
+.event-class {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-
-.event-class{
   padding: 20px;
   width: 250px;
   cursor: pointer;
@@ -41,9 +27,8 @@ defineProps<{
   margin-bottom: 18px;
 }
 
-.event-class:hover{
+.event-class:hover {
   transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 }
 </style>
-

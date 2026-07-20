@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import type { Event } from '@/types'
 
 defineProps<{
@@ -25,4 +25,4 @@ defineProps<{
   text-align: right;
   margin: 2px 0;
 }
-</style>
+</style> -->

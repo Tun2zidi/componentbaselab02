@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-    baseURL: 'https://dv-student-backend-2019.appspot.com/students',
+    baseURL: 'https://my-json-server.typicode.com/Tun2zidi/db.josn',
     withCredentials: false,
     headers:{
         Accept: 'application/json',
@@ -11,6 +11,6 @@ const apiClient = axios.create({
 
 export default{
     getEvents(){
-        return apiClient.get('/')
+        return apiClient.get('/events')
     }
 }

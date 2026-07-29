@@ -2,18 +2,22 @@
 import { toRefs } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Event } from '@/types'
+import { useMessageStore } from '@/stores/message'
 
 const props = defineProps<{
   event: Event
 }>()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { event } = toRefs(props)
+const store = useMessageStore()
 const router = useRouter()
 
 const register = () => {
-  // If the registration API call successful
-  // Push back to the event details view
-  router.push({ name: 'event-detail-view' })
+  store.updateMessage(`You are successfully registered for the ${props.event.title}!`)
+  setTimeout(() => {
+    store.resetMessage()
+  }, 3000)
+  router.push({ name: 'event-detail-view', params: { id: props.event.id } })
 }
 </script>
 
